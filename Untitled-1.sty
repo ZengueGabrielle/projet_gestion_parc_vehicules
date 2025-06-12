@@ -1,0 +1,174 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter.}{1em}{}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\setlength{\cftsecindent}{2em}
+\setlength{\cftsubsecindent}{4em}
+
+% Configuring fonts
+\usepackage{noto}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    \Huge
+    \textbf{Rapport de Soutenance}\\[1cm]
+    \LARGE
+    Système de Gestion de Parc de Véhicules avec Prédiction de Maintenance\\[1cm]
+    \Large
+    Projet réalisé par : Votre Nom\\
+    Encadré par : Nom de l'Encadrant\\
+    \vspace{1cm}
+    \normalsize
+    Établissement : Votre Établissement\\
+    Année académique : 2024-2025\\
+    \vspace{2cm}
+    \includegraphics[width=0.3\textwidth]{logo.png} % Remplacer par le logo de votre établissement si disponible
+    \vfill
+    \normalsize
+    Date : 11 juin 2025
+\end{titlepage}
+
+% Page de table des matières
+\tableofcontents
+\newpage
+
+% Chapitre 1 : Introduction
+\chapter{Introduction}
+\section{Contexte du projet}
+Dans un monde où la gestion efficace des ressources est cruciale, la gestion d'un parc de véhicules représente un défi majeur pour les entreprises et les organisations. La nécessité d'assurer un suivi rigoureux des véhicules, de leurs affectations et de leurs maintenances, tout en optimisant les coûts, a conduit à la conception de systèmes informatiques spécialisés. Ce projet s'inscrit dans cette démarche en proposant une application web innovante pour la gestion de parc de véhicules, intégrant des fonctionnalités avancées telles que la prédiction de maintenance grâce à l'intelligence artificielle (IA).
+
+\section{Objectifs du projet}
+L'objectif principal de ce projet est de développer une application web permettant de :
+\begin{itemize}
+    \item Gérer les véhicules, leurs affectations et leurs maintenances.
+    \item Suivre les kilométrages et les historiques de maintenance.
+    \item Prédire les besoins de maintenance à l'aide de l'IA.
+    \item Proposer des stratégies pour minimiser les coûts de maintenance.
+    \item Assurer une gestion sécurisée des utilisateurs avec des rôles distincts (administrateur, gestionnaire de parc, utilisateur).
+\end{itemize}
+
+\section{Structure du rapport}
+Ce rapport est organisé comme suit :
+\begin{itemize}
+    \item \textbf{Chapitre 2} : Présentation du contexte et analyse des besoins.
+    \item \textbf{Chapitre 3} : Description des fonctionnalités de l'application.
+    \item \textbf{Chapitre 4} : Méthodologie et technologies utilisées.
+    \item \textbf{Chapitre 5} : Résultats et analyse.
+    \item \textbf{Chapitre 6} : Conclusion et perspectives.
+\end{itemize}
+
+% Chapitre 2 : Analyse des besoins
+\chapter{Analyse des besoins}
+\section{Besoin fonctionnel}
+L'application doit répondre aux besoins suivants :
+\begin{itemize}
+    \item \textbf{Authentification} : Gestion des rôles avec des niveaux d'accès distincts pour les administrateurs, les gestionnaires de parc et les utilisateurs.
+    \item \textbf{Monitoring} : Suivi en temps réel des kilométrages des véhicules et des historiques de maintenance.
+    \item \textbf{Backup} : Sauvegarde sécurisée des données relatives aux véhicules et aux maintenances.
+    \item \textbf{Prédiction de maintenance} : Utilisation de l'IA pour anticiper les besoins de maintenance en fonction des données historiques et des kilométrages.
+    \item \textbf{Gestion des coûts} : Proposition de stratégies pour optimiser les coûts de maintenance.
+\end{itemize}
+
+\section{Besoin non fonctionnel}
+\begin{itemize}
+    \item \textbf{Sécurité} : Protection des données sensibles via une authentification robuste et un chiffrement des données.
+    \item \textbf{Performance} : Temps de réponse rapide pour les opérations courantes.
+    \item \textbf{Accessibilité} : Interface utilisateur intuitive et accessible sur différents appareils (ordinateurs, tablettes, smartphones).
+\end{itemize}
+
+% Chapitre 3 : Description des fonctionnalités
+\chapter{Fonctionnalités de l'application}
+\section{Gestion des utilisateurs}
+L'application permet la création et la gestion de comptes utilisateurs avec trois rôles principaux :
+\begin{itemize}
+    \item \textbf{Administrateur} : Accès complet à toutes les fonctionnalités, y compris la gestion des utilisateurs et des paramètres système.
+    \item \textbf{Gestionnaire de parc} : Gestion des véhicules, des affectations et des maintenances.
+    \item \textbf{Utilisateur} : Consultation des données et soumission de demandes d'affectation ou de maintenance.
+\end{itemize}
+
+\section{Suivi des véhicules}
+Chaque véhicule est associé à un profil contenant :
+\begin{itemize}
+    \item Identifiant unique, marque, modèle, et année.
+    \item Kilométrage actuel et historique des trajets.
+    \item Historique des maintenances effectuées.
+\end{itemize}
+
+\section{Prédiction de maintenance}
+Un module d'intelligence artificielle analyse les données historiques (kilométrage, fréquence des pannes, type de maintenance) pour prédire les besoins futurs en maintenance. Ce module utilise des algorithmes d'apprentissage automatique pour identifier les patterns et proposer des interventions préventives.
+
+\section{Gestion des coûts}
+L'application calcule les coûts associés aux maintenances et propose des stratégies pour réduire les dépenses, comme l'optimisation des calendriers de maintenance ou l'utilisation de pièces de rechange économiques.
+
+% Chapitre 4 : Méthodologie et technologies
+\chapter{Méthodologie et technologies}
+\section{Méthodologie}
+Le développement de l'application suit une approche agile, avec des itérations courtes permettant de tester et d'améliorer les fonctionnalités au fur et à mesure. Les étapes incluent :
+\begin{itemize}
+    \item Analyse des besoins et conception de l'architecture.
+    \item Développement des modules (authentification, gestion des véhicules, prédiction IA).
+    \item Tests unitaires et intégration continue.
+    \item Déploiement et validation avec les utilisateurs finaux.
+\end{itemize}
+
+\section{Technologies utilisées}
+\begin{itemize}
+    \item \textbf{Frontend} : HTML, CSS, JavaScript (framework à préciser, par exemple React).
+    \item \textbf{Backend} : Langage et framework à préciser (par exemple Python avec Django ou Node.js).
+    \item \textbf{Base de données} : Système de gestion de base de données à préciser (par exemple PostgreSQL).
+    \item \textbf{IA} : Bibliothèques d'apprentissage automatique comme TensorFlow ou Scikit-learn pour la prédiction de maintenance.
+    \item \textbf{Hébergement} : Plateforme cloud à préciser (par exemple AWS ou Heroku).
+\end{itemize}
+
+% Chapitre 5 : Résultats et analyse
+\chapter{Résultats et analyse}
+\section{Résultats obtenus}
+Cette section sera complétée avec les résultats concrets du projet une fois les fichiers fournis. Les métriques attendues incluent :
+\begin{itemize}
+    \item Précision des prédictions de maintenance.
+    \item Réduction des coûts observée grâce aux stratégies proposées.
+    \item Performance de l'application (temps de réponse, fiabilité).
+\end{itemize}
+
+\section{Analyse des performances}
+À compléter avec les détails des tests effectués (tests unitaires, tests d'intégration, tests utilisateurs).
+
+% Chapitre 6 : Conclusion et perspectives
+\chapter{Conclusion et perspectives}
+\section{Conclusion}
+Ce projet a permis de développer une application web robuste pour la gestion de parc de véhicules, intégrant des fonctionnalités avancées de prédiction de maintenance grâce à l'IA. Les objectifs initiaux ont été atteints, offrant une solution_wp2
+solution efficace pour les gestionnaires de parc.
+
+\section{Perspectives}
+Les améliorations futures pourraient inclure :
+\begin{itemize}
+    \item Intégration de capteurs IoT pour un suivi en temps réel des véhicules.
+    \item Amélioration des algorithmes de prédiction avec des données supplémentaires.
+    \item Extension de l'application à d'autres types de véhicules (poids lourds, engins spéciaux).
+\end{itemize}
+
+% Bibliographie
+\chapter*{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\begin{thebibliography}{9}
+\bibitem{ref1} Documentation des technologies utilisées (à compléter).
+\bibitem{ref2} Articles sur la gestion de parc et la maintenance prédictive (à compléter).
+\end{thebibliography}
+
+\end{document}
